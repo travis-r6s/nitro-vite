@@ -12,4 +12,11 @@ export default defineNitroConfig({
       dir: './dist/.vite',
     },
   ],
+  azure: {
+    config: {
+      platform: {
+        apiRuntime: 'node:18'
+      }
+    }
+  }
 })
