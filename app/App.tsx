@@ -24,6 +24,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <br />
+      <a href="/api">
+        View API Route
+      </a>
     </>
   )
 }
