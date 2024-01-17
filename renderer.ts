@@ -1,8 +1,6 @@
 import process from 'node:process'
 
 export default defineEventHandler(async (ctx) => {
-  console.log('handle render!', ctx.path)
-
   if (process.env.NODE_ENV === 'development') {
     const [serverAddress] = ctx.context.vite.resolvedUrls.local
 
@@ -33,10 +31,19 @@ export default defineEventHandler(async (ctx) => {
     `
   }
 
-  const manifest = await useStorage('assets:vite').getItem<string>(`manifest.json`)
-  console.log({ manifest })
+  type Manifest = Record<string, { css: string[], file: string, isEntry: boolean }>
 
-  const entryChunk = manifest['app/main.tsx']
+  const manifest = await useStorage('assets:vite').getItem<Manifest>(`manifest.json`)
+  if (!manifest) {
+    setResponseStatus(ctx, 500)
+    return `Missing manifest`
+  }
+
+  const entryChunk = Object.values(manifest).find(entry => entry.isEntry)
+  if (!entryChunk) {
+    setResponseStatus(ctx, 500)
+    return `Missing manifest entry`
+  }
 
   const cssLinks = entryChunk.css.map(link => `<link rel="stylesheet" href="/${link}" />`).join('\n')
   const scriptLinks = `<script type="module" src="/${entryChunk.file}"></script>`

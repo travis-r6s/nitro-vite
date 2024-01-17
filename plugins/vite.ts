@@ -2,11 +2,11 @@ import process from 'node:process'
 import type { ViteDevServer } from 'vite'
 
 export default defineNitroPlugin(async (nitroApp) => {
-  if (process.env.NODE_ENV === 'production')
+  if (process.env.NODE_ENV === 'production') {
     return
+  }
 
   const { createServer } = await import('vite')
-  console.log('Starting Vite dev server')
 
   const vite = await createServer()
 

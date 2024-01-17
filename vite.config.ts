@@ -4,14 +4,14 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   server: {
     port: 5173,
-    origin: 'http://localhost'
+    origin: 'http://localhost',
   },
   appType: 'mpa',
   build: {
     manifest: true,
     rollupOptions: {
       input: './app/main.tsx',
-    }
+    },
   },
   plugins: [
     react({}),

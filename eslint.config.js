@@ -5,6 +5,7 @@ export default antfu({
   react: true,
   ignores: ['.nitro', 'dist', 'build', 'node_modules'],
   rules: {
-    'no-console': 'off'
-  }
+    'no-console': 'off',
+    'curly': ['error', 'multi-line'],
+  },
 })

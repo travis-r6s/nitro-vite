@@ -6,13 +6,13 @@ export default defineNitroConfig({
   },
   publicAssets: [
     {
-      dir: 'dist'
-    }
+      dir: 'dist',
+    },
   ],
   serverAssets: [
     {
       baseName: 'vite',
-      dir: './dist/.vite'
-    }
-  ]
+      dir: './dist/.vite',
+    },
+  ],
 })

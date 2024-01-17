@@ -1,5 +1,4 @@
 export default eventHandler((ctx) => {
-  console.log('auth middleware!')
   if (ctx.path === '/') {
     // Want to redirect?
     // setResponseStatus(ctx, 307)
