@@ -3,8 +3,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   server: {
-    port: 5173,
-    origin: 'http://localhost',
+    port: 5173
   },
   appType: 'mpa',
   build: {
