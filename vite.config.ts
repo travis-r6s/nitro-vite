@@ -11,7 +11,7 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       input: './app/main.tsx',
-    },
+    }
   },
   plugins: [
     react({}),
