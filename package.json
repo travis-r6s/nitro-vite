@@ -4,6 +4,9 @@
   "volta": {
     "node": "18.19.0"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "prepare": "nitropack prepare",
     "dev": "nitropack dev",
