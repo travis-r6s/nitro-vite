@@ -2,7 +2,7 @@
 
 [Demo Site](https://brave-dune-045f79d0f.4.azurestaticapps.net)
 
-> Note: There is a project called [Vinxi](https://github.com/nksaraf/vinxi) which turns all this into an actual framework you could (and probably should) use instead
+> Note: There is a project called [Vinxi](https://github.com/nksaraf/vinxi) which turns all this into an actual framework you could (and probably should) use instead. It also enables you to do SSR 👀
 
 A simple demo to show how Nitro + Vite can be used together as an MPA. This means you can have Nitro serve both your API (with routes under the `/routes/*` folder), and your SPA (code located in `/app`, and rendered by the `./renderer.ts` handler), and build this for any hosting platform.
 
