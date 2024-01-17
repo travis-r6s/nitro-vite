@@ -1,6 +1,9 @@
 {
   "type": "module",
   "private": true,
+  "volta": {
+    "node": "18.19.0"
+  },
   "scripts": {
     "prepare": "nitropack prepare",
     "dev": "nitropack dev",
