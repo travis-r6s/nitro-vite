@@ -11,7 +11,6 @@ export default defineNitroPlugin(async (nitroApp) => {
   const vite = await createServer()
 
   await vite.listen()
-  vite.printUrls()
 
   nitroApp.hooks.hook('request', (event) => {
     event.context.vite = vite
